@@ -73,8 +73,10 @@ git config --global user.email "k1s1v2@yahoo.com"
 1. Зайти в Accounts (внизу слева голова человека в кружочке)
 2. Выбрать пункт "Turn on cloud changes..." и в верхней строке "Sign with GitHub"
 
-
-
+Подключить компилятор С к VSCode 
+https://code.visualstudio.com/docs/cpp/config-mingw
+не забыть выполнить конфигурирование IntelliSense, путем открытия коммандной карусели и выбора пункта Select IntelliSense Configuration (иначе не будут подключаться 
+include)
 
 
 
