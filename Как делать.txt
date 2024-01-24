@@ -78,5 +78,7 @@ https://code.visualstudio.com/docs/cpp/config-mingw
 не забыть выполнить конфигурирование IntelliSense, путем открытия коммандной карусели и выбора пункта Select IntelliSense Configuration (иначе не будут подключаться 
 include)
 
+Как прочитать из стандартного ввода при отладке GO в VSCode
+В файл конфигурации запуска кода GO (файл launch.json, раздел "name": "Launch file" для go) добавить строчку "console": "integratedTerminal"
 
 
