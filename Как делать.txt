@@ -81,4 +81,24 @@ include)
 Как прочитать из стандартного ввода при отладке GO в VSCode
 В файл конфигурации запуска кода GO (файл launch.json, раздел "name": "Launch file" для go) добавить строчку "console": "integratedTerminal"
 
+Последлвательность установки Docker в UBUNTU под WSL (Windows) (из курса Основы работы с Docker на STEPIK):
+1. запустить Linux (Ubuntu 22.04.2) из коммандной строки Windows
+2. обновить существующий список пакетов:
+	sudo apt update
+3. установить обязательные пакеты, которые позволяют использовать пакеты apt через HTTPS:
+	sudo apt install apt-transport-https ca-certificates curl software-properties-common
+4. добавить в свою систему ключ GPG для официального репозитория Docker:
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+5. добавить репозиторий Docker в источники APT:
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+6. снова обновить существующий список пакетов, чтобы добавление было распознано:
+	sudo apt update
+7. убедиться, что мы собираемся установить Docker из репозитория вместо репозитория Ubuntu (по умолчанию):
+	apt-cache policy docker-ce
+обратить внимание, что docker-ce он не установлен, но кандидат на установку находится в репозитории Docker для Ubuntu 22.04 (в выводе команды строки Installed и Candidate)
+8. установим Docker:
+	sudo apt install docker-ce
+9. убедиться, что DOCKER раборает
+	sudo systemctl status docker
+
 
