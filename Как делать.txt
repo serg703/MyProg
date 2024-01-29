@@ -81,7 +81,7 @@ include)
 Как прочитать из стандартного ввода при отладке GO в VSCode
 В файл конфигурации запуска кода GO (файл launch.json, раздел "name": "Launch file" для go) добавить строчку "console": "integratedTerminal"
 
-Последлвательность установки Docker в UBUNTU под WSL (Windows) (из курса Основы работы с Docker на STEPIK):
+Последовательность установки Docker в UBUNTU под WSL (Windows) (из курса Основы работы с Docker на STEPIK):
 1. запустить Linux (Ubuntu 22.04.2) из коммандной строки Windows
 2. обновить существующий список пакетов:
 	sudo apt update
@@ -101,4 +101,11 @@ include)
 9. убедиться, что DOCKER раборает
 	sudo systemctl status docker
 
+Ошибка "go.mod file not found in current directory or any parent directory; see 'go help modules'" в VSCode при попытке скомпилировать проект как с отладчиком, так и без него
+1. посмотреть переменные go
+	go env
+2. для исправления ошибки изменитьпеременную GO111MODULE на auto командой 
+	go env -w GO111MODULE=auto
 
+
+	
