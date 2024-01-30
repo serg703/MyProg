@@ -106,8 +106,17 @@ include)
 Ошибка "go.mod file not found in current directory or any parent directory; see 'go help modules'" в VSCode при попытке скомпилировать проект как с отладчиком, так и без него
 1. посмотреть переменные go
 	go env
-2. для исправления ошибки изменитьпеременную GO111MODULE на auto командой 
+2. для исправления ошибки изменить переменную GO111MODULE на auto командой 
 	go env -w GO111MODULE=auto
+
+Чтобы скомпилировать под Linux
+1. Зайти в коммандную строку Windows
+2. Выполнить комманду
+	set GOOS=linux
+3. Скомпилировать командой
+	go build имя_файла
+
+ 
 
 
 	
