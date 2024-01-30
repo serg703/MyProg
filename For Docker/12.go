@@ -7,7 +7,18 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello, web!"))
+	w.Write([]byte(`<html>
+	<head>
+	  <title> 
+		Тест приложения в контейнере 
+	  </title>
+	</head>
+  <body>
+  <h1>Тест</h1>
+  Просто текст
+  <p>Текст в параграфе</p>
+  </body>
+  </html>`))
 }
 
 func main() {
