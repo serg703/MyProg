@@ -1,0 +1,5 @@
+FROM scratch
+COPY . /
+WORKDIR /
+CMD ["./12"]
+EXPOSE 8080
