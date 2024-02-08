@@ -116,7 +116,16 @@ include)
 3. Скомпилировать командой
 	go build имя_файла
 
- 
-
-
-	
+Команды DOCKER
+список сетей, к которым подключен 
+ 	docker network ls
+информация о конкретной сети 
+	docker network inspect ID_network
+к какой сети подключен контейнер
+	docker inspect имя_или_ID_контейнера
+запустить контейнер с названием XXX с помощью образа YYY и прикрепить его к сети ZZZ
+	docker run -d --name XXX --network=ZZZ YYY
+какие сетевые интерфейсы расположены внутри контейнера
+	docker exec имя_или_ID_контейнера ip a
+создать новую сеть с названием XXX, которая будет использовать сетевой драйвер bridge. Назначить ей подсеть 172.22.0.1/24. Gateway 172.22.0.1
+	docker network create --driver bridge --subnet 172.22.0.1/24 --gateway 172.22.0.1 XXX
