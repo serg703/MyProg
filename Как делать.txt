@@ -131,3 +131,11 @@ include)
 	docker exec имя_или_ID_контейнера ip a
 создать новую сеть с названием XXX, которая будет использовать сетевой драйвер bridge. Назначить ей подсеть 172.22.0.1/24. Gateway 172.22.0.1
 	docker network create --driver bridge --subnet 172.22.0.1/24 --gateway 172.22.0.1 XXX
+
+Доступ к приложению (или контейнеру) внутри WSL по порту с другого хоста (отличного от того, на котором запущена WSL) требует
+1. пробросить порт хоста на WSL (адрес WSL узнается командой "wsl hostname -I") 
+	netsh interface portproxy add v4tov4 listenport=порт_хоста listenaddress=0.0.0.0 connectport=порт_WSL connectaddress=адрес_WSL
+2. создать правило в брандмауэре Windows 10
+	netsh advfirewall firewall add rule name=”имя правила” dir=in action=allow protocol=TCP localport=порт_хоста
+
+	
